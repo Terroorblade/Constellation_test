@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fivesemtest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89b94c76a432e18744826cf28ba466f182630731")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fivesemtest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fivesemtest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
