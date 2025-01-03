@@ -1,0 +1,48 @@
+@page
+@using Fivesemtest.Models
+@model Fivesemtest.Pages.Users.LKModel
+
+@{
+    ViewData["Title"] = "ЛК";
+}
+
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>Личный кабинет</h1>
+        <hr />
+    </div>
+
+    <div class="profile-info">
+        <dl>
+            <dt>Имя:</dt>
+            <dd>@Html.DisplayFor(model => model.CurUser.Username)</dd>
+
+           
+        </dl>
+    </div>
+
+    <div class="profile-actions">
+        <h2>Действия</h2>
+        <hr />
+        @if (User.IsInRole("user") || User.IsInRole("admin"))
+        {
+            <a asp-page="./Edit" asp-route-id="@Model.CurUser.UserId" style="background-color: #ffe6f0; border-color: #ffe6f0; color: #333; padding: 10px 15px; text-decoration: none; display: inline-block; border-radius: 4px; cursor: pointer;">Редактировать данные</a> <a>|</a>
+        }
+
+        <a asp-page="/Dailyschedule/Index" asp-route-performerId="@Model.CurUser.UserId" style="background-color: #ffe6f0; border-color: #ffe6f0; color: #333; padding: 10px 15px; text-decoration: none; display: inline-block; border-radius: 4px; cursor: pointer;">Календарь</a> <a>|</a>
+
+        <p></p>
+
+        @if (User.IsInRole("user"))
+        {
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" style="background-color: #ffe6f0; border-color: #ffe6f0; color: #333; padding: 10px 15px; text-decoration: none; display: inline-block; border-radius: 4px; cursor: pointer;">Изменить email или пароль</a>
+
+            <a>|</a>
+        }
+
+        @if (User.IsInRole("user") || User.IsInRole("admin"))
+        {
+            <a asp-page="./Delete" asp-route-id="@Model.CurUser.UserId" style="background-color: #ffe6f0; border-color: #ffe6f0; color: #333; padding: 10px 15px; text-decoration: none; display: inline-block; border-radius: 4px; cursor: pointer;">Удалить профиль</a>
+        }
+    </div>
+</div>

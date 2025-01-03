@@ -1,0 +1,33 @@
+@page
+@model Fivesemtest.Pages.Users.CreateModel
+
+@{
+    ViewData["Title"] = "Создать пользователя";
+}
+
+<h1>Создать пользователя</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="CurUser.Username" class="control-label">Имя пользователя</label>
+        <input asp-for="CurUser.Username" class="form-control" />
+        <span asp-validation-for="CurUser.Username" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurUser.Email" class="control-label">Электронная почта</label>
+        <input asp-for="CurUser.Email" class="form-control" />
+        <span asp-validation-for="CurUser.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CurUser.PasswordHash" class="control-label">Пароль</label>
+        <input asp-for="CurUser.PasswordHash" type="password" class="form-control" />
+        <span asp-validation-for="CurUser.PasswordHash" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,15 @@
+@page
+@model Fivesemtest.Pages.Users.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить пользователя";
+}
+
+<h1>Удалить пользователя</h1>
+
+<p>Вы уверены, что хотите удалить пользователя @Model.User.UserName?</p>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a href="./Index" class="btn btn-secondary">Отмена</a>
+</form>
